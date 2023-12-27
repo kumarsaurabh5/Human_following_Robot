@@ -1,0 +1,225 @@
+// Starting of 
+
+
+int IN1a = 8;
+int IN2a = 7;
+int IN3b = 5;
+int IN4b = 4;
+int EN1 = 9;
+int EN2 = 3;
+char val ;
+
+void setup() 
+{  
+pinMode(IN1a, OUTPUT);  // Digital pin 10 set as output Pin
+pinMode(IN2a, OUTPUT);  // Digital pin 11 set as output Pin
+pinMode(IN3b, OUTPUT);  // Digital pin 12 set as output Pin
+pinMode(IN4b, OUTPUT);  // Digital pin 13 set as output Pin
+pinMode(EN1, OUTPUT);
+pinMode(EN2, OUTPUT);
+Serial.begin(9600);
+}
+
+void loop()
+{
+  while (Serial.available() > 0)
+  {
+  val = Serial.read();
+  Serial.println(val);
+  }
+
+  if( val == 'F') // Forward
+    {
+    digitalWrite(IN1a, HIGH);
+    digitalWrite(IN2a, LOW);
+    digitalWrite(IN1a, HIGH);
+    digitalWrite(IN1a, LOW); 
+    }
+  else if(val == 'B') // Backward
+    {
+      digitalWrite(IN1a, LOW);
+      digitalWrite(IN2a, HIGH);
+      digitalWrite(IN3b, LOW);
+      digitalWrite(IN4b, HIGH); 
+    }
+  
+    else if(val == 'L') //Left
+    {
+    digitalWrite(IN1a, HIGH);
+    digitalWrite(IN2a, LOW);
+    digitalWrite(IN3b, LOW);
+    digitalWrite(IN4b, HIGH);
+    analogWrite(EN1, 120);
+   analogWrite(EN2, 120);
+  
+    }
+    else if(val == 'R') //Right
+    {
+    digitalWrite(IN1a, LOW);
+    digitalWrite(IN2a, HIGH);
+    digitalWrite(IN3b, HIGH);
+    digitalWrite(IN4b, LOW); 
+    analogWrite(EN1, 120);
+   analogWrite(EN2, 120);
+       
+    }
+    
+  else if(val == 'S') //Stop
+    {
+    digitalWrite(IN1a, LOW);
+    digitalWrite(IN2a, LOW);
+    digitalWrite(IN3b, LOW);
+
+    digitalWrite(IN4b, LOW); 
+    
+
+    }
+    else if(val == 'W') //Right
+    {
+    digitalWrite(IN1a, LOW);
+    digitalWrite(IN2a, HIGH);
+    digitalWrite(IN3b, LOW);
+    digitalWrite(IN4b, HIGH); 
+     analogWrite(EN1, 220);
+     analogWrite(EN2, 220); 
+    delay(3000);
+     digitalWrite(IN1a, LOW);
+    digitalWrite(IN2a, LOW);
+    digitalWrite(IN3b, LOW);
+    digitalWrite(IN4b, LOW); 
+    }
+    else if(val == 'X') //Right
+    {
+    digitalWrite(IN1a, LOW);
+    digitalWrite(IN2a, );
+    digitalWrite(IN3b, LOW);
+    analogWrite(IN4b, 190);
+    delay(3000);
+    digitalWrite(IN1a, LOW);
+    analogWrite(IN2a, 0);
+    digitalWrite(IN3b, LOW);
+    analogWrite(IN4b, 0); 
+    }
+    else if(val == 'Y') //Right
+    {
+    digitalWrite(IN1a, LOW);
+    analogWrite(IN2a, 240);
+    digitalWrite(IN3b, LOW);
+    analogWrite(IN4b, 240); 
+    delay(3000);
+    digitalWrite(IN1a, LOW);
+    analogWrite(IN2a, 0);
+    digitalWrite(IN3b, LOW);
+    analogWrite(IN4b, 0);
+    }
+    else if(val == 'Z') //Right
+    {
+    digitalWrite(IN1a, LOW);
+    analogWrite(IN2a, 230);
+    digitalWrite(IN3b, LOW);
+    analogWrite(IN4b, 230); 
+    delay(3000);
+    digitalWrite(IN1a, LOW);
+    analogWrite(IN2a, 0);
+    digitalWrite(IN3b, LOW);
+    analogWrite(IN4b, 0);
+
+    }
+    else if(val == '6') //Right
+    {
+    digitalWrite(IN1a, LOW);
+    analogWrite(IN2a, 210);
+    digitalWrite(IN3b, LOW);
+    analogWrite(IN4b, 210); 
+    delay(3000);
+    digitalWrite(IN1a, LOW);
+    analogWrite(IN2a, 0);
+    digitalWrite(IN3b, LOW);
+    analogWrite(IN4b, 0);
+    }
+    else if(val == '7') //Right
+    {
+    digitalWrite(IN1a, LOW);
+    analogWrite(IN2a, 210);
+    digitalWrite(IN3b, LOW);
+    analogWrite(IN4b, 210); 
+    delay(3000);
+    digitalWrite(IN1a, LOW);
+    analogWrite(IN2a, 0);
+    digitalWrite(IN3b, LOW);
+    analogWrite(IN4b, 0); 
+    } //anticlockwise
+   
+    else if(val == 'M') //Left
+    {
+    analogWrite(IN1a, 190);
+    digitalWrite(IN2a, LOW);
+    analogWrite(IN3b,190);
+    digitalWrite(IN4b, LOW);
+    delay(3000);
+    analogWrite(IN1a, 0);
+    digitalWrite(IN2a, LOW);
+    analogWrite(IN3b,0);
+    digitalWrite(IN4b, LOW);
+    }
+    else if(val == 'N') //Left
+    {
+    analogWrite(IN1a, 150);
+    digitalWrite(IN2a, LOW);
+    digitalWrite(IN3b, 150);
+    digitalWrite(IN4b, LOW);
+     delay(3000);
+    analogWrite(IN1a, 0);
+    digitalWrite(IN2a, LOW);
+    analogWrite(IN3b,0);
+    digitalWrite(IN4b, LOW);
+    }
+    else if(val == 'O') //Left
+    {
+    analogWrite(IN1a, 170);
+    digitalWrite(IN2a, LOW);
+    digitalWrite(IN3b, 170);
+    digitalWrite(IN4b, LOW);
+     delay(3000);
+    analogWrite(IN1a, 0);
+    digitalWrite(IN2a, LOW);
+    analogWrite(IN3b,0);
+    digitalWrite(IN4b, LOW);
+    }
+    else if(val == 'P') //Left
+    {
+    analogWrite(IN1a, 190);
+    digitalWrite(IN2a, LOW);
+    digitalWrite(IN3b,190);
+    digitalWrite(IN4b, LOW);
+     delay(3000);
+    analogWrite(IN1a, 0);
+    digitalWrite(IN2a, LOW);
+    analogWrite(IN3b,0);
+    digitalWrite(IN4b, LOW);
+    }
+    else if(val == 'Q') //Left
+    {
+    analogWrite(IN1a, 220);
+    digitalWrite(IN2a, LOW);
+    analogWrite(IN3b, 220);
+    digitalWrite(IN4b, LOW);
+     delay(5000);
+    analogWrite(IN1a, 0);
+    digitalWrite(IN2a, LOW);
+  analogWrite(IN3b,0);
+    digitalWrite(IN4b, LOW);
+    }
+    else if(val == 'R') //Left
+    {
+    analogWrite(IN1a, 190);
+    digitalWrite(IN2a, LOW);
+    analogWrite(IN3b, 190);
+    digitalWrite(IN4b, LOW);
+     delay(5000);
+    analogWrite(IN1a, 0);
+    digitalWrite(IN2a, LOW);
+    analogWrite(IN3b,0);
+    digitalWrite(IN4b, LOW);
+    }
+}
